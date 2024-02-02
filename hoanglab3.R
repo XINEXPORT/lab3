@@ -21,29 +21,35 @@ ships_df <- data.frame(
 ships_df
 
 #Use the single bracket selector to select the column named CrewSize, (position 2).
-ships_df[2,]
+ships_df[2]
 
 #Use the $ selector to select the vector for the column named Captain.
-
+ships_df$Captain
 
 #Use the rbind() function to add a row for another captain and crew size, 
 #when you do use a list, not a vector to store the data for the row.
-
+ships_df <- rbind(ships_df, 
+                  list("Grey Beard", 5))
 
 #Code a For Loop that loops through all values in the vector for the CrewSize column.
 #Within the loop code a statement that prints each crew size value to the console. 
 #Make sure the loop runs properly.  Make sure your values only print once. 
 #In the instructor file I show you two different ways you can do this.
+ships_df
+for (i in 1: length(ships_df)) 
 
-
+  
 #Create a vector that is called yourlastname, substituting your last name. 
 #The vector should have 5 text values in it. It can be anything you like: sports teams, dog breeds, types of tea, etc.
-
+hoang<-c("sin", "tri", "squar", "saw", "wav")
+hoang
 
 #Print the value in the 4th position of vector, using a single bracket selector.
-
+hoang[4]
 
 #Code a For Loop with an IF statement that prints the third value, (whatever that is).
+hoang
+for (str in hoang) {print(str[3])}
 
 
 #Copy your code from step 11 and an Else clause that prints the words “Not Third Value”. Your output should look something like this.
@@ -66,7 +72,8 @@ ships_df[2,]
 #“Secondnumber subtracted from the firstnumber = firstvariable.”
 #The second line should look something like this.
 #“Firstnumber and secondnumber multiplied together = secondvariable.”
-#Substitute firstnumber and secondnumber for the values that are passed to the function and substitute firstvariable and secondvariable for the variable values.
+#Substitute firstnumber and secondnumber for the values that are passed to the function and 
+#substitute firstvariable and secondvariable for the variable values.
 
 
 
