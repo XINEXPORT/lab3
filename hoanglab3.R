@@ -35,10 +35,11 @@ ships_df <- rbind(ships_df,
 #Within the loop code a statement that prints each crew size value to the console. 
 #Make sure the loop runs properly.  Make sure your values only print once. 
 #In the instructor file I show you two different ways you can do this.
-ships_df
-for (i in 1: length(ships_df)) 
+for(i in 1:length(ships_df))
+{
+  print(ships_df[i])
+}
 
-  
 #Create a vector that is called yourlastname, substituting your last name. 
 #The vector should have 5 text values in it. It can be anything you like: sports teams, dog breeds, types of tea, etc.
 hoang<-c("sin", "tri", "squar", "saw", "wav")
@@ -48,12 +49,13 @@ hoang
 hoang[4]
 
 #Code a For Loop with an IF statement that prints the third value, (whatever that is).
-hoang
-for (str in hoang) {print(str[3])}
-
-
-#Copy your code from step 11 and an Else clause that prints the words “Not Third Value”. Your output should look something like this.
-
+for (i in 1: length(hoang)) {
+  if (i == 3) {
+    print (hoang[i])
+  } else {
+    print ("Not Third Value")
+  }
+}
 
 #Create a custom function that has one argument. The function should be called welcome_message. 
 #The function should take one parameter and print a message to the console that uses the parameter and includes some other text. 
@@ -63,17 +65,64 @@ for (str in hoang) {print(str[3])}
 #print( paste("some text", parameter, “some more text”))
 #Make sure and test the function.
 
+welcome_message<-function(i){
+  print(paste("Hi-diddly-ho", i, "norino"))
+}
+
+welcome_message("Christine")
+
 
 #Create a function called subract_and_multiply() that accepts two numbers as arguments.
 #Inside the function’s brackets subtract the first number from the second number and store the result in a variable. 
 #Also multiply the first number and the second number and store the result in a second variable. 
 #Finally print two lines inside the function. The first line should look something like this:
 
-#“Secondnumber subtracted from the firstnumber = firstvariable.”
-#The second line should look something like this.
-#“Firstnumber and secondnumber multiplied together = secondvariable.”
-#Substitute firstnumber and secondnumber for the values that are passed to the function and 
-#substitute firstvariable and secondvariable for the variable values.
+subract_and_multiply<-function(firstnumber, secondnumber){
+  first_var<-secondnumber-firstnumber
+  second_var<-secondnumber*firstnumber
+  
+  print(paste("secondnumber subtracted from the firstnumber", "=",
+              first_var))
+  print(paste("firstnumber multiplied by the secondnumber", "=",
+              second_var))
+}
+
+subract_and_multiply(-3,3)
 
 
+#demo code
+cats_names<-c('fluffy', 'demon', 'fatso', 'stripe')
+weight <-c(9,11,16,12)
+cat_weights <-data.frame(name_of_cat=cats_names, weight_of_cat=weight)
+cat_weights
+cat_weights[2]
+cat_weights$name_of_cat
+cat_weights <-rbind(cat_weights, list("spike", 10))
+#vectors has to have the same datatypes across all values
 
+for(i in 1:length(cat_weights))
+{
+  print(cat_weights[i])
+}
+
+
+for(i in 1:length(cat_weights))
+{
+  if(i == 3){
+    print(cat_weights[i])
+  }
+}
+
+#print the columns of cat weights
+for(i in 1:2)
+{
+  print(cat_weights[i])
+}
+
+#write a function
+welcome_message<-function(First_name){
+  First_name = "Christine"
+  print(paste("hello", First_name, "this is a welcome message"))
+}
+
+welcome_message()
